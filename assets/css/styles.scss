@@ -1,0 +1,41 @@
+:root {
+  --background: white;
+  --text: 255, 255, 255;
+  --primary: 78, 139, 254;
+  --secondary: 99, 83, 165;
+}
+
+[data-theme="light"] {
+  --background: black;
+  --text: 92, 102, 109;
+  --primary: 43, 131, 191;
+  --secondary: 205, 218, 227;
+}
+
+html {
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+::selection {
+  color: white;
+  background: #3764ba;
+}
