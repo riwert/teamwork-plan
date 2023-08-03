@@ -1,5 +1,5 @@
 <template>
-  <SectionAccordion :items="plan.items" />
+  <SectionAccordion :tag="plan.tag" :title="plan.title" :items="plan.items" />
 </template>
 
 <script>

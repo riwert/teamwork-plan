@@ -1,15 +1,10 @@
 :root {
   --background: white;
-  --text: 255, 255, 255;
-  --primary: 78, 139, 254;
-  --secondary: 99, 83, 165;
-}
-
-[data-theme="light"] {
-  --background: black;
-  --text: 92, 102, 109;
-  --primary: 43, 131, 191;
-  --secondary: 205, 218, 227;
+  --text: #494E6A;
+  --primary: #1D1C39;
+  --secondary: #FF22B1;
+  --tertiary: #4461D7;
+  --quadrary: #EAEEF4;
 }
 
 html {
@@ -26,6 +21,7 @@ html {
 
 body {
   background-color: var(--background);
+  color: var(--text);
 }
 
 *,
