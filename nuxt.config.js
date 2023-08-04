@@ -24,6 +24,7 @@ export default {
       { rel: 'icon', type: 'type', sizes: '32x32', href: '/favicon/favicon-32x32.png' },
       { rel: 'icon', type: 'type', sizes: '16x16', href: '/favicon/favicon-16x16.png' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
+      { rel: 'canonical', href: 'https://teamwork-accordion.vercel.app' },
     ]
   },
 
