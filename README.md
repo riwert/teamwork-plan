@@ -5,6 +5,9 @@ Front-end assessment in Nuxt.js v2 & Sass as PWA.
 ## App demo
 [teamwork-accordion.vercel.app](https://teamwork-accordion.vercel.app "Open app demo")
 
+
+[!['teamwork accordion sceenshot example'](screenshot.jpg)](https://teamwork-accordion.vercel.app 'See app demo')
+
 ## Build Setup
 
 ```bash
