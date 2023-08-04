@@ -1,5 +1,7 @@
 <template>
-  <Plan :plan="plan" />
+  <main>
+    <SectionPlan :plan="plan" />
+  </main>
 </template>
 
 <script>

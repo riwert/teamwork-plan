@@ -1,12 +1,12 @@
 <template>
   <section class="section__accordion">
-    <div class="col">
-      <img src="ogimage.png" alt="Workload with Overview and Planner tabs and search users field" />
+    <div class="col col--image">
+      <img :src="image.src" :alt="image.alt" />
     </div>
-    <div class="col">
+    <div class="col col--content">
       <div class="tag">{{ tag }}</div>
       <h1 class="title">{{ title }}</h1>
-      <AccordionItem v-if="items" v-for="(item, index) in items" :key="index" :item="item" :is-first="index === 0" />
+      <AccordionItem v-if="items" v-for="(item, index) in items" :key="index" :item="item" :is-first="index === 0" @image-change="handleImageChange" />
     </div>
   </section>
 </template>
@@ -14,6 +14,22 @@
 <script>
 export default {
   name: 'SectionAccordion',
+
+  data() {
+    return {
+      image: {
+        src: 'ogimage.webp',
+        alt: 'Workload with Overview and Planner tabs and search users field'
+      }
+    }
+  },
+
+  methods: {
+    handleImageChange(image) {
+      this.image = image
+    }
+  },
+
   props: {
     tag: {
       type: String,
@@ -31,21 +47,62 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .section__accordion {
   display: flex;
+  justify-content: space-between;
 
   .col {
-    flex: 0 0 50%;
-    max-width: 50%;
+
+    @media (min-width: 1024px) {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+
+    &--image {
+      display: none;
+      max-width: 650px;
+      margin: 34px 0;
+
+      @media (min-width: 1024px) {
+        display: block;
+      }
+    }
+    
+    &--content {
+      max-width: 400px;
+      margin: auto;
+    }
   }
 
   .tag {
     color: var(--secondary);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; /* 178.571% */
+    letter-spacing: 2px;
+    margin-bottom: 9px;
   }
 
   .title {
     color: var(--primary);
+    font-family: Work Sans;
+    margin-bottom: 34px;
+
+    max-width: 305px;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 41px; /* 146.429% */ 
+
+    @media (min-width: 1024px) {
+      max-width: none;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 41px; /* 102.5% */ 
+    }
   }
 }
 </style>

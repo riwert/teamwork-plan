@@ -15,7 +15,7 @@ export default {
       { hid: 'author', name: 'author', content: 'revert@revert.pl' },
       { name: 'format-detection', content: 'telephone=no' },
       { name: 'theme-color', content: '#1D1D38' },
-      { property: 'og:image', content: '/ogimage.png' },
+      { property: 'og:image', content: '/ogimage.webp' },
     ],
     link: [
       { rel: 'icon', type: 'type', sizes: '512x512', href: '/favicon/android-chrome-512x512.png' },
