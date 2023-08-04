@@ -27,6 +27,16 @@ export default {
     }
   },
 
+  created() {
+    if (this.index === 0) {
+      const image = {
+        src: this.item.image,
+        alt: 'Image of '+this.item.title
+      }
+      this.$emit('image-change', image)
+    }
+  },
+
   methods: {
     toggleOpen: function (e, item) {
       if (this.isOpen && e.target.nodeName.toLowerCase() == 'h2') return
