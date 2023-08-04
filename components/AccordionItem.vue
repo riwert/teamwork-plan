@@ -1,12 +1,12 @@
 <template>
   <div class="accordion__item" :class="{'is-open': isOpen}">
-    <h2 :role="!isOpen ? 'button' : undefined" @click="toggleOpen($event, item)" :class="{'link': !isOpen}" class="title">
+    <h2 :role="!isOpen ? 'button' : undefined" :tabindex="!isOpen ? '0' : undefined" :aria-expanded="isOpen" :aria-controls="'accordion__item__text--'+index" @click="toggleOpen($event, item)" @keydown="handleKeyDown($event, item)" :class="{'link': !isOpen}" class="title">
       {{ item.title }}
-      <svg :aria-label="'Chevron icon pointing '+(isOpen ? 'up' : 'down')" class="icon" width="25" height="25" viewBox="112 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg :role="isOpen ? 'button' : undefined" :tabindex="isOpen ? '0' : undefined" :aria-label="'Chevron icon pointing '+(isOpen ? 'up' : 'down')" class="icon" width="25" height="25" viewBox="112 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M117.404 9L124.372 17L131.404 9H117.404Z" fill="#494E6A"/>
       </svg>
     </h2>
-    <div class="text toggleable" :class="{'show': isOpen}">
+    <div :id="'accordion__item__text--'+index" class="text toggleable" :class="{'show': isOpen}">
       <div>
         <p>{{ item.text }}</p>
         <div class="image-wrapper">
@@ -23,7 +23,7 @@ export default {
 
   data () {
     return {
-      isOpen: (this.isFirst ? true : false),
+      isOpen: (this.index === 0 ? true : false),
     }
   },
 
@@ -45,6 +45,13 @@ export default {
     emitImageChange: function (image) {
       this.$emit('image-change', image);
     },
+
+    handleKeyDown: function (e, item) {
+      if (e.keyCode === 13 || e.key === "Enter" || e.keyCode === 32 || e.key === " ") {
+        this.toggleOpen(e, item)
+        e.target.blur()
+      }
+    },
   },
 
   props: {
@@ -52,8 +59,8 @@ export default {
       type: Object,
       required: true
     },
-    isFirst: {
-      type: Boolean,
+    index: {
+      type: Number,
       required: true
     }
   }

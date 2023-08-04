@@ -6,7 +6,7 @@
     <div class="col col--content">
       <div class="tag">{{ tag }}</div>
       <h1 class="title">{{ title }}</h1>
-      <AccordionItem v-if="items" v-for="(item, index) in items" :key="index" :item="item" :is-first="index === 0" @image-change="handleImageChange" />
+      <AccordionItem v-if="items" v-for="(item, index) in items" :key="index" :item="item" :index="index" @image-change="handleImageChange" />
     </div>
   </section>
 </template>
