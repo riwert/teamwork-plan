@@ -2,7 +2,7 @@
 
 Front-end assessment in Nuxt.js v2 & Sass as PWA.
 
-Teamwork
+Teamwork section with the plan presentation and a simple accordion functionality.
 
 ## App demo
 [teamwork-plan.vercel.app](https://teamwork-plan.vercel.app "Open app demo")
