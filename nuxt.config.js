@@ -7,7 +7,7 @@ export default {
     htmlAttrs: {
       lang: 'en'
     },
-    title: 'Teamwork Accordion',
+    title: 'Teamwork Plan',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -24,7 +24,7 @@ export default {
       { rel: 'icon', type: 'type', sizes: '32x32', href: '/favicon/favicon-32x32.png' },
       { rel: 'icon', type: 'type', sizes: '16x16', href: '/favicon/favicon-16x16.png' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
-      { rel: 'canonical', href: 'https://teamwork-accordion.vercel.app' },
+      { rel: 'canonical', href: 'https://teamwork-plan.vercel.app' },
     ]
   },
 
@@ -71,7 +71,7 @@ export default {
   pwa: {
     manifest: {
       lang: 'en',
-      name: "Teamwork Accordion",
+      name: "Teamwork Plan",
       short_name: "Teamwork",
       description: "Front-end assessment in Nuxt.js v2 & Sass as PWA.",
       icons: [

@@ -1,12 +1,14 @@
-# Teamwork Accordion
+# Teamwork Plan
 
 Front-end assessment in Nuxt.js v2 & Sass as PWA.
 
+Teamwork
+
 ## App demo
-[teamwork-accordion.vercel.app](https://teamwork-accordion.vercel.app "Open app demo")
+[teamwork-plan.vercel.app](https://teamwork-plan.vercel.app "Open app demo")
 
 
-[!['teamwork accordion sceenshot example'](screenshot.jpg)](https://teamwork-accordion.vercel.app 'See app demo')
+[!['teamwork plan sceenshot example'](screenshot.jpg)](https://teamwork-plan.vercel.app 'See app demo')
 
 ## Build Setup
 
