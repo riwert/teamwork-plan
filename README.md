@@ -2,6 +2,9 @@
 
 Front-end assessment in Nuxt.js v2 & Sass.
 
+## App demo
+[teamwork-accordion.vercel.app](https://teamwork-accordion.vercel.app "Open app demo")
+
 ## Build Setup
 
 ```bash
