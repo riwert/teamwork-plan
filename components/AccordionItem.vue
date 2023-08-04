@@ -40,10 +40,12 @@ export default {
         }
         this.emitImageChange(image)
       }
+
+      e.target.blur()
     },
 
     emitImageChange: function (image) {
-      this.$emit('image-change', image);
+      this.$emit('image-change', image)
     },
 
     handleKeyDown: function (e, item) {
