@@ -71,7 +71,11 @@ export default {
     
     &--content {
       max-width: 400px;
-      margin: auto;
+      margin: 0 auto;
+
+      @media (min-width: 1024px) {
+        margin: 0;
+      }
     }
   }
 
