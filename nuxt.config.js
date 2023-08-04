@@ -11,7 +11,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Front-end assessment in Nuxt.js v2 & Sass.' },
+      { hid: 'description', name: 'description', content: 'Front-end assessment in Nuxt.js v2 & Sass as PWA.' },
       { hid: 'author', name: 'author', content: 'revert@revert.pl' },
       { name: 'format-detection', content: 'telephone=no' },
       { name: 'theme-color', content: '#1D1D38' },
@@ -72,7 +72,7 @@ export default {
       lang: 'en',
       name: "Teamwork Accordion",
       short_name: "Teamwork",
-      description: "Front-end assessment in Nuxt.js v2 & Sass.",
+      description: "Front-end assessment in Nuxt.js v2 & Sass as PWA.",
       icons: [
         {
           src: "/favicon/android-chrome-512x512.png",

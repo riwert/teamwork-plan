@@ -1,6 +1,6 @@
 {
   "name": "teamork-accordion",
-  "description": "Front-end assessment in Nuxt.js v2 & Sass",
+  "description": "Front-end assessment in Nuxt.js v2 & Sass as PWA",
   "author": "revert@revert.pl",
   "version": "1.0.0",
   "private": true,
