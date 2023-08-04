@@ -9,9 +9,9 @@
     <div class="text toggleable" :class="{'show': isOpen}">
       <div>
         <p>{{ item.text }}</p>
-        <a class="image-wrapper" :href="item.image" :title="'Open '+item.title" target="_blank" rel="noopener">
+        <div class="image-wrapper">
           <img :src="item.image" :alt="'Image of '+item.title" />
-        </a>
+        </div>
       </div>
     </div>
   </div>
@@ -137,7 +137,6 @@ export default {
     img {
       width: auto;
       max-height: 120px;
-      transition: 1s ease-in-out;
 
       &:hover,
       &:focus {
