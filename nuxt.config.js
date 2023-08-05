@@ -11,11 +11,20 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Front-end assessment in Nuxt.js v2 & Sass as PWA.' },
+      { hid: 'description', name: 'description', content: 'Teamwork section with the plan presentation and a simple accordion functionality.' },
       { hid: 'author', name: 'author', content: 'revert@revert.pl' },
       { name: 'format-detection', content: 'telephone=no' },
       { name: 'theme-color', content: '#1D1D38' },
+
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:site', content: '@nuxt_js' },
+
+      { property: 'og:locale', content: 'en_GB' },
+      { property: 'og:site_name', content: 'teamwork-plan.vercel.app' },
+      { property: 'og:title', content: 'Teamwork Plan' },
+      { property: 'og:description', content: 'Teamwork section with the plan presentation and a simple accordion functionality.' },
       { property: 'og:image', content: '/ogimage.webp' },
+      { property: 'og:url', content: 'https://teamwork-plan.vercel.app' },
     ],
     link: [
       { rel: 'icon', type: 'type', sizes: '512x512', href: '/favicon/android-chrome-512x512.png' },
@@ -71,32 +80,32 @@ export default {
   pwa: {
     manifest: {
       lang: 'en',
-      name: "Teamwork Plan",
-      short_name: "Teamwork",
-      description: "Front-end assessment in Nuxt.js v2 & Sass as PWA.",
+      name: 'Teamwork Plan',
+      short_name: 'T. Plan',
+      description: 'Teamwork section with the plan presentation and a simple accordion functionality.',
       icons: [
         {
-          src: "/favicon/android-chrome-512x512.png",
-          sizes: "512x512",
-          type: "image/png",
-          purpose: "any maskable"
+          src: '/favicon/android-chrome-512x512.png',
+          sizes: '512x512',
+          type: 'image/png',
+          purpose: 'any maskable'
         },
         {
-          src: "/favicon/android-chrome-192x192.png",
-          sizes: "192x192",
-          type: "image/png"
+          src: '/favicon/android-chrome-192x192.png',
+          sizes: '192x192',
+          type: 'image/png'
         },
         {
-          src: "/favicon/apple-touch-icon.png",
-          sizes: "180x180",
-          type: "image/png",
-          purpose: "any maskable"
+          src: '/favicon/apple-touch-icon.png',
+          sizes: '180x180',
+          type: 'image/png',
+          purpose: 'any maskable'
         }
       ],
-      theme_color: "#1D1D38",
-      background_color: "#ffffff",
-      display: "standalone",
-      start_url: "/"
+      theme_color: '#1D1D38',
+      background_color: '#ffffff',
+      display: 'standalone',
+      start_url: '/'
     }
   },
 

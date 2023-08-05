@@ -1,6 +1,6 @@
 {
   "name": "teamwork-plan",
-  "description": "Front-end assessment in Nuxt.js v2 & Sass as PWA",
+  "description": "Teamwork section with the plan presentation and a simple accordion functionality.",
   "author": "revert@revert.pl",
   "version": "1.0.0",
   "private": true,
