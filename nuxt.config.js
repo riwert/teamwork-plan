@@ -29,7 +29,7 @@ export default {
       { property: 'og:site_name', content: 'teamwork-plan.vercel.app' },
       { property: 'og:title', content: site.title },
       { property: 'og:description', content: site.description },
-      { property: 'og:image', content: '/ogimage.webp' },
+      { property: 'og:image', content: site.url+'/ogimage.webp' },
       { property: 'og:url', content: site.url },
     ],
     link: [
