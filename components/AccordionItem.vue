@@ -169,11 +169,10 @@ export default {
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
-    line-height: 26px; /* 173.333% */
+    line-height: 26px;
 
     @media (min-width: 1024px) {
       font-size: 16px;
-      line-height: 26px; /* 162.5% */
     }
 
     p {
