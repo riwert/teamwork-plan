@@ -1,3 +1,9 @@
+const site = {
+  title: 'Teamwork Plan',
+  description: 'Teamwork section with the plan presentation and a simple accordion functionality.',
+  url: 'https://teamwork-plan.vercel.app',
+}
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -7,11 +13,11 @@ export default {
     htmlAttrs: {
       lang: 'en'
     },
-    title: 'Teamwork Plan',
+    title: site.title,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Teamwork section with the plan presentation and a simple accordion functionality.' },
+      { hid: 'description', name: 'description', content: site.description },
       { hid: 'author', name: 'author', content: 'revert@revert.pl' },
       { name: 'format-detection', content: 'telephone=no' },
       { name: 'theme-color', content: '#1D1D38' },
@@ -21,10 +27,10 @@ export default {
 
       { property: 'og:locale', content: 'en_GB' },
       { property: 'og:site_name', content: 'teamwork-plan.vercel.app' },
-      { property: 'og:title', content: 'Teamwork Plan' },
-      { property: 'og:description', content: 'Teamwork section with the plan presentation and a simple accordion functionality.' },
+      { property: 'og:title', content: site.title },
+      { property: 'og:description', content: site.description },
       { property: 'og:image', content: '/ogimage.webp' },
-      { property: 'og:url', content: 'https://teamwork-plan.vercel.app' },
+      { property: 'og:url', content: site.url },
     ],
     link: [
       { rel: 'icon', type: 'type', sizes: '512x512', href: '/favicon/android-chrome-512x512.png' },
@@ -33,7 +39,7 @@ export default {
       { rel: 'icon', type: 'type', sizes: '32x32', href: '/favicon/favicon-32x32.png' },
       { rel: 'icon', type: 'type', sizes: '16x16', href: '/favicon/favicon-16x16.png' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
-      { rel: 'canonical', href: 'https://teamwork-plan.vercel.app' },
+      { rel: 'canonical', href: site.url },
     ],
   },
 
@@ -80,9 +86,9 @@ export default {
   pwa: {
     manifest: {
       lang: 'en',
-      name: 'Teamwork Plan',
+      name: site.title,
       short_name: 'T. Plan',
-      description: 'Teamwork section with the plan presentation and a simple accordion functionality.',
+      description: site.description,
       icons: [
         {
           src: '/favicon/android-chrome-512x512.png',
