@@ -10,7 +10,7 @@
       <div>
         <p>{{ item.text }}</p>
         <div class="image-wrapper" v-if="isOpen">
-          <img :src="item.image" :alt="'Image of '+item.title" />
+          <img :src="item.image" :alt="item.title" />
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@ export default {
     if (this.index === 0) {
       const image = {
         src: this.item.image,
-        alt: 'Image of '+this.item.title
+        alt: this.item.title
       }
       this.$emit('image-change', image)
     }
@@ -46,7 +46,7 @@ export default {
       if (this.isOpen) {
         const image = {
           src: item.image,
-          alt: 'Image of '+item.title
+          alt: item.title
         }
         this.emitImageChange(image)
       }
