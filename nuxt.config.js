@@ -34,7 +34,7 @@ export default {
       { rel: 'icon', type: 'type', sizes: '16x16', href: '/favicon/favicon-16x16.png' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
       { rel: 'canonical', href: 'https://teamwork-plan.vercel.app' },
-    ]
+    ],
   },
 
   /*
@@ -44,7 +44,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/assets/css/styles.scss'
+    '~/assets/css/styles.scss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -67,7 +67,7 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     // https://github.com/nuxt-modules/google-fonts
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -88,24 +88,27 @@ export default {
           src: '/favicon/android-chrome-512x512.png',
           sizes: '512x512',
           type: 'image/png',
-          purpose: 'any maskable'
+          purpose: 'any maskable',
         },
         {
           src: '/favicon/android-chrome-192x192.png',
           sizes: '192x192',
-          type: 'image/png'
+          type: 'image/png',
         },
         {
           src: '/favicon/apple-touch-icon.png',
           sizes: '180x180',
           type: 'image/png',
-          purpose: 'any maskable'
-        }
+          purpose: 'any maskable',
+        },
       ],
       theme_color: '#1D1D38',
       background_color: '#ffffff',
       display: 'standalone',
-      start_url: '/'
+      start_url: '/',
+    },
+    icon: {
+      fileName: 'favicon.ico',
     }
   },
 
@@ -116,19 +119,18 @@ export default {
   googleFonts: {
     families: {
       'Work+Sans': {
-        wght: [400, 500, 600]
-      }
+        wght: [400, 500, 600],
+      },
     },
-    display: 'swap'
+    display: 'swap',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extractCSS: true,
-    html: {
-      minify: {
-        removeRedundantAttributes: false
-      }
+    postcss: {
+      preset: {
+        stage: 3,
+      },
     },
   },
 }
