@@ -87,10 +87,11 @@ export default {
 
 <style lang="scss" scoped>
 .accordion__item {
-  background-color: var(--quadrary);
   border-radius: 4px;
   padding: 18px;
   margin-bottom: 20px;
+  background-color: var(--quadrary);
+  transition: background-color 0.3s linear;
 
   &:last-child {
     margin-bottom: 0;
@@ -184,6 +185,7 @@ export default {
   }
 
   &.is-open {
+    background-color: var(--quinary);
 
     .title {
       color: var(--tertiary);
