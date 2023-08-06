@@ -18,8 +18,8 @@ export default {
   data() {
     return {
       image: {
-        src: 'ogimage.webp',
-        alt: 'Workload with Overview and Planner tabs and search users field'
+        src: '',
+        alt: ''
       },
       isImageLoaded: false
     }
