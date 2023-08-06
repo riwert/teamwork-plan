@@ -38,7 +38,7 @@ export default {
   },
 
   methods: {
-    toggleOpen: function (e, item) {
+    toggleOpen(e, item) {
       if (this.isOpen && e.target.nodeName.toLowerCase() == 'h2') return
 
       this.isOpen = !this.isOpen
@@ -54,11 +54,11 @@ export default {
       e.target.blur()
     },
 
-    emitImageChange: function (image) {
+    emitImageChange(image) {
       this.$emit('image-change', image)
     },
 
-    handleKeyDown: function (e, item) {
+    handleKeyDown(e, item) {
       if (e.keyCode === 13 || e.key === "Enter" || e.keyCode === 32 || e.key === " ") {
         this.toggleOpen(e, item)
         e.target.blur()
