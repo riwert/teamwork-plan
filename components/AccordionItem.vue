@@ -1,7 +1,7 @@
 <template>
   <article class="accordion__item" :class="{'is-open': isOpen}">
     <h2 class="title">
-      <a :role="!isOpen ? 'button' : 'figure'" :tabindex="!isOpen ? '0' : undefined" :aria-expanded="!isOpen ? 'false' : undefined" :aria-controls="!isOpen ? 'accordion__item__text--'+itemNumber : undefined" @click="toggleOpen($event, item)" @keydown="handleKeyDown($event, item)" :class="{'link': !isOpen}">
+      <a :role="!isOpen ? 'button' : 'figure'" :tabindex="!isOpen ? '0' : undefined" :aria-expanded="!isOpen ? 'false' : undefined" :aria-controls="!isOpen ? 'accordion__item__text--'+itemNumber : undefined" @click="toggleOpen($event, item, index)" @keydown="handleKeyDown($event, item, index)" :class="{'link': !isOpen}">
         {{ item.title }}
         <svg :role="isOpen ? 'button' : undefined" :tabindex="isOpen ? '0' : undefined" :aria-expanded="isOpen ? true : undefined" :aria-controls="isOpen ? 'accordion__item__text--'+itemNumber : undefined" :aria-label="'Chevron icon pointing '+(isOpen ? 'up' : 'down')" class="icon" width="25" height="25" viewBox="112 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M117.404 9L124.372 17L131.404 9H117.404Z" fill="#494E6A"/>
@@ -25,22 +25,22 @@ export default {
 
   data () {
     return {
-      isOpen: (this.index === 0 ? true : false),
+      isOpen: (this.index === this.openedIndex),
     }
   },
 
   created() {
-    if (this.index === 0) {
+    if (this.index === this.openedIndex) {
       const image = {
         src: this.item.image,
         alt: this.item.title
       }
-      this.$emit('image-change', image)
+      this.$emit('image-change', image, this.index)
     }
   },
 
   methods: {
-    toggleOpen(e, item) {
+    toggleOpen(e, item, index) {
       if (this.isOpen && e.target.nodeName.toLowerCase() == 'a') return
 
       this.isOpen = !this.isOpen
@@ -50,22 +50,28 @@ export default {
           src: item.image,
           alt: item.title
         }
-        this.emitImageChange(image)
+        this.emitImageChange(image, index)
       }
 
       e.target.blur()
     },
 
-    emitImageChange(image) {
-      this.$emit('image-change', image)
+    emitImageChange(image, index) {
+      this.$emit('image-change', image, index)
     },
 
-    handleKeyDown(e, item) {
+    handleKeyDown(e, item, index) {
       if (e.keyCode === 13 || e.key === "Enter" || e.keyCode === 32 || e.key === " ") {
-        this.toggleOpen(e, item)
+        this.toggleOpen(e, item, index)
         e.target.blur()
       }
     },
+  },
+
+  watch: {
+    openedIndex(newValue) {
+      this.isOpen = (newValue === this.index)
+    }
   },
 
   computed: {
@@ -80,6 +86,10 @@ export default {
       required: true
     },
     index: {
+      type: Number,
+      required: true
+    },
+    openedIndex: {
       type: Number,
       required: true
     }

@@ -6,7 +6,7 @@
     <div class="col col--content">
       <div class="tag">{{ tag }}</div>
       <h1 class="title">{{ title }}</h1>
-      <AccordionItem v-if="items" v-for="(item, index) in items" :key="index" :item="item" :index="index" @image-change="handleImageChange" />
+      <AccordionItem v-if="items" v-for="(item, index) in items" :key="index" :item="item" :index="index" :openedIndex="openedIndex" @image-change="handleImageChange" />
     </div>
   </section>
 </template>
@@ -21,14 +21,16 @@ export default {
         src: '',
         alt: ''
       },
-      isImageLoaded: false
+      isImageLoaded: false,
+      openedIndex: 0
     }
   },
 
   methods: {
-    handleImageChange(image) {
+    handleImageChange(image, index) {
       this.isImageLoaded = false
       this.image = image
+      this.openedIndex = index
     },
     handleImageLoad() {
       this.isImageLoaded = true
