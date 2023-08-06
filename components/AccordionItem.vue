@@ -120,11 +120,10 @@ export default {
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
-    line-height: 120%; /* 21.6px */
+    line-height: 120%;
 
     @media (min-width: 1024px) {
       font-size: 21px;
-      line-height: 120%; /* 25.2px */
     }
   }
 

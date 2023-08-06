@@ -73,7 +73,7 @@ export default {
         display: block;
       }
     }
-    
+
     &--content {
       max-width: 400px;
       margin: 0 auto;
@@ -103,14 +103,11 @@ export default {
     font-size: 28px;
     font-style: normal;
     font-weight: 600;
-    line-height: 41px; /* 146.429% */ 
+    line-height: 41px;
 
     @media (min-width: 1024px) {
       max-width: none;
       font-size: 40px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 41px; /* 102.5% */ 
     }
   }
 }

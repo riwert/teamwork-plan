@@ -21,7 +21,7 @@ export default {
 .section__plan {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 40px 29px 13px 28px; 
+  padding: 40px 29px 13px 28px;
 
   @media (min-width: 1200px) {
     padding: 81px 116px 80px 91px;
