@@ -66,16 +66,19 @@ export default {
 
     &--image {
       display: none;
-      max-width: 650px;
-      margin: 34px 0;
 
-      @media (min-width: 1024px) {
+      @media (min-width: 992px) {
         display: block;
+        flex-shrink: 1;
+        flex-basis: 650px;
+        max-width: 650px;
+        margin: 34px 0;
       }
     }
 
     &--content {
       max-width: 400px;
+      flex-shrink: 1;
       margin: 0 auto;
 
       @media (min-width: 1024px) {

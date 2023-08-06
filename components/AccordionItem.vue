@@ -168,7 +168,7 @@ export default {
     display: block;
     text-align: center;
 
-    @media (min-width: 1024px) {
+    @media (min-width: 992px) {
       display: none;
     }
 
