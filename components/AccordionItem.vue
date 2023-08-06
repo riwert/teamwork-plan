@@ -1,9 +1,9 @@
 <template>
   <article class="accordion__item" :class="{'is-open': isOpen}">
     <h2 class="title">
-      <a :role="!isOpen ? 'button' : undefined" :tabindex="!isOpen ? '0' : undefined" :aria-expanded="isOpen" :aria-controls="'accordion__item__text--'+itemNumber" @click="toggleOpen($event, item)" @keydown="handleKeyDown($event, item)" :class="{'link': !isOpen}">
+      <a :role="!isOpen ? 'button' : 'figure'" :tabindex="!isOpen ? '0' : undefined" :aria-expanded="!isOpen ? 'false' : undefined" :aria-controls="!isOpen ? 'accordion__item__text--'+itemNumber : undefined" @click="toggleOpen($event, item)" @keydown="handleKeyDown($event, item)" :class="{'link': !isOpen}">
         {{ item.title }}
-        <svg :role="isOpen ? 'button' : undefined" :tabindex="isOpen ? '0' : undefined" :aria-label="'Chevron icon pointing '+(isOpen ? 'up' : 'down')" class="icon" width="25" height="25" viewBox="112 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg :role="isOpen ? 'button' : undefined" :tabindex="isOpen ? '0' : undefined" :aria-expanded="isOpen ? true : undefined" :aria-controls="isOpen ? 'accordion__item__text--'+itemNumber : undefined" :aria-label="'Chevron icon pointing '+(isOpen ? 'up' : 'down')" class="icon" width="25" height="25" viewBox="112 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M117.404 9L124.372 17L131.404 9H117.404Z" fill="#494E6A"/>
         </svg>
       </a>
