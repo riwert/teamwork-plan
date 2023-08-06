@@ -41,3 +41,16 @@ img {
   color: #fff;
   background: #3764ba;
 }
+
+.fade-in {
+  animation: fadeIn 0.3s normal forwards ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

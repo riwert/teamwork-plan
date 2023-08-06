@@ -1,7 +1,7 @@
 <template>
   <section class="section__accordion">
     <div class="col col--image">
-      <img :src="image.src" :alt="image.alt" />
+      <img :src="image.src" :alt="image.alt" @load="handleImageLoad" :class="{'fade-in': isImageLoaded }" />
     </div>
     <div class="col col--content">
       <div class="tag">{{ tag }}</div>
@@ -20,13 +20,18 @@ export default {
       image: {
         src: 'ogimage.webp',
         alt: 'Workload with Overview and Planner tabs and search users field'
-      }
+      },
+      isImageLoaded: false
     }
   },
 
   methods: {
     handleImageChange(image) {
+      this.isImageLoaded = false
       this.image = image
+    },
+    handleImageLoad() {
+      this.isImageLoaded = true
     }
   },
 
