@@ -101,13 +101,20 @@ export default {
   }
 
   .title {
+    user-select: none;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    color: var(--heading);
     margin-bottom: 0;
-    user-select: none;
+
+    color: var(--heading);
+    transition: color 0.3s linear;
+
+    &:hover,
+    &:focus {
+      color: var(--tertiary);
+    }
 
     font-size: 18px;
     font-style: normal;
@@ -125,7 +132,6 @@ export default {
     margin-left: auto;
     margin-right: 0;
 
-    &:focus,
     &:active {
       outline: 0;
       border: none;
