@@ -1,10 +1,12 @@
 <template>
-  <div class="accordion__item" :class="{'is-open': isOpen}">
-    <h2 :role="!isOpen ? 'button' : undefined" :tabindex="!isOpen ? '0' : undefined" :aria-expanded="isOpen" :aria-controls="'accordion__item__text--'+itemNumber" @click="toggleOpen($event, item)" @keydown="handleKeyDown($event, item)" :class="{'link': !isOpen}" class="title">
-      {{ item.title }}
-      <svg :role="isOpen ? 'button' : undefined" :tabindex="isOpen ? '0' : undefined" :aria-label="'Chevron icon pointing '+(isOpen ? 'up' : 'down')" class="icon" width="25" height="25" viewBox="112 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M117.404 9L124.372 17L131.404 9H117.404Z" fill="#494E6A"/>
-      </svg>
+  <article class="accordion__item" :class="{'is-open': isOpen}">
+    <h2 class="title">
+      <a :role="!isOpen ? 'button' : undefined" :tabindex="!isOpen ? '0' : undefined" :aria-expanded="isOpen" :aria-controls="'accordion__item__text--'+itemNumber" @click="toggleOpen($event, item)" @keydown="handleKeyDown($event, item)" :class="{'link': !isOpen}">
+        {{ item.title }}
+        <svg :role="isOpen ? 'button' : undefined" :tabindex="isOpen ? '0' : undefined" :aria-label="'Chevron icon pointing '+(isOpen ? 'up' : 'down')" class="icon" width="25" height="25" viewBox="112 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M117.404 9L124.372 17L131.404 9H117.404Z" fill="#494E6A"/>
+        </svg>
+      </a>
     </h2>
     <div :id="'accordion__item__text--'+itemNumber" class="text toggleable" :class="{'show': isOpen}">
       <div>
@@ -14,7 +16,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </article>
 </template>
 
 <script>
@@ -39,7 +41,7 @@ export default {
 
   methods: {
     toggleOpen(e, item) {
-      if (this.isOpen && e.target.nodeName.toLowerCase() == 'h2') return
+      if (this.isOpen && e.target.nodeName.toLowerCase() == 'a') return
 
       this.isOpen = !this.isOpen
 
@@ -102,31 +104,36 @@ export default {
   }
 
   .title {
-    user-select: none;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 0;
 
-    color: var(--heading);
-    transition: color 0.3s linear;
+    a {
+      user-select: none;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px;
+      margin: -18px;
+      border-radius: 4px;
 
-    &:hover,
-    &:focus {
-      color: var(--tertiary);
-    }
+      color: var(--heading);
+      transition: color 0.3s linear, background-color 0.3s linear;
 
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 120%;
+      &:hover,
+      &:focus {
+        background-color: var(--quinary);
+      }
 
-    @media (min-width: 1024px) {
-      font-size: 21px;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+
+      @media (min-width: 1024px) {
+        font-size: 21px;
+      }
     }
   }
-
   .icon {
     cursor: pointer;
     margin-left: auto;
@@ -186,7 +193,7 @@ export default {
   &.is-open {
     background-color: var(--quinary);
 
-    .title {
+    .title a {
       color: var(--tertiary);
       user-select: auto;
     }
