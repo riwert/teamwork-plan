@@ -88,7 +88,7 @@ export default {
 <style lang="scss" scoped>
 .accordion__item {
   background-color: var(--quadrary);
-  border-radius: 4px; 
+  border-radius: 4px;
   padding: 18px;
   margin-bottom: 20px;
 
@@ -112,38 +112,45 @@ export default {
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
-    line-height: 120%; /* 21.6px */ 
+    line-height: 120%; /* 21.6px */
 
     @media (min-width: 1024px) {
       font-size: 21px;
       line-height: 120%; /* 25.2px */
     }
   }
-  
+
   .icon {
     cursor: pointer;
     margin-left: auto;
     margin-right: 0;
+
+    &:focus,
+    &:active {
+      outline: 0;
+      border: none;
+    }
+
     transition: transform 0.3s ease-out, scale 0.3s ease-out;
     transform-origin: center center;
     transform: scale(0.88);
-    
+
     @media (min-width: 1024px) {
       transform: scale(1);
     }
   }
-  
+
   .text {
     max-width: 339px;
 
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
-    line-height: 26px; /* 173.333% */ 
+    line-height: 26px; /* 173.333% */
 
     @media (min-width: 1024px) {
       font-size: 16px;
-      line-height: 26px; /* 162.5% */ 
+      line-height: 26px; /* 162.5% */
     }
 
     p {
