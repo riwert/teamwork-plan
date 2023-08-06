@@ -1,12 +1,12 @@
 <template>
-  <section class="section__plan">
+  <div class="teamwork__plan">
     <SectionAccordion :tag="plan.tag" :title="plan.title" :items="plan.items" />
-  </section>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'SectionPlan',
+  name: 'TeamworkPlan',
 
   props: {
     plan: {
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.section__plan {
+.teamwork__plan {
   max-width: 1440px;
   margin: 0 auto;
   padding: 40px 29px 13px 28px;

@@ -1,6 +1,6 @@
 <template>
   <main>
-    <SectionPlan :plan="plan" />
+    <TeamworkPlan :plan="plan" />
   </main>
 </template>
 
