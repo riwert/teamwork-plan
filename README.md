@@ -8,7 +8,17 @@ Teamwork section with the plan presentation and a simple accordion functionality
 [teamwork-plan.vercel.app](https://teamwork-plan.vercel.app "Open app demo")
 
 
-[!['teamwork plan sceenshot example'](screenshot.jpg)](https://teamwork-plan.vercel.app 'See app demo')
+### Screenshot desktop
+[!['teamwork plan desktop sceenshot example'](screenshot-desktop.jpg)](screenshot-desktop.jpg 'See full image')
+
+### Screenshot mobile
+[!['teamwork plan mobile sceenshot example'](screenshot-mobile.jpg)](screenshot-mobile.jpg 'See full image')
+
+### Lighthouse report desktop
+[!['teamwork plan sceenshot of lighthouse report on desktop'](screenshot-lighthouse-desktop.png)](screenshot-lighthouse-desktop.png 'See full image')
+
+### Lighthouse report mobile
+[!['teamwork plan sceenshot of lighthouse report on mobile'](screenshot-lighthouse-mobile.png)](screenshot-lighthouse-mobile.png 'See full image')
 
 ## Build Setup
 
