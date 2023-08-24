@@ -90,7 +90,7 @@ export default {
   }
 
   .tag {
-    color: var(--secondary);
+    color: var(--tertiary);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
