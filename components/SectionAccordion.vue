@@ -1,7 +1,7 @@
 <template>
   <section class="section__accordion">
     <div class="col col--image">
-      <img v-if="image.src" :src="image.src" :alt="image.alt" @load="handleImageLoad" :class="{'fade-in': isImageLoaded }" />
+      <img v-if="image.src" :src="image.src" :alt="image.alt" width="650" height="570" @load="handleImageLoad" :class="{'fade-in': isImageLoaded }" />
     </div>
     <div class="col col--content">
       <div class="tag">{{ tag }}</div>

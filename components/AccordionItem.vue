@@ -1,18 +1,25 @@
 <template>
-  <article class="accordion__item" :class="{'is-open': isOpen}">
+  <article class="accordion__item" :class="{ 'is-open': isOpen }">
     <h2 class="title">
-      <a :role="!isOpen ? 'button' : 'figure'" :tabindex="!isOpen ? '0' : undefined" :aria-expanded="!isOpen ? 'false' : undefined" :aria-controls="!isOpen ? 'accordion__item__text--'+itemNumber : undefined" @click="toggleOpen($event, item, index)" @keydown="handleKeyDown($event, item, index)" :class="{'link': !isOpen}">
+      <a :role="!isOpen ? 'button' : 'figure'" :tabindex="!isOpen ? '0' : undefined"
+        :aria-expanded="!isOpen ? 'false' : undefined"
+        :aria-controls="!isOpen ? 'accordion__item__text--' + itemNumber : undefined"
+        @click="toggleOpen($event, item, index)" @keydown="handleKeyDown($event, item, index)" :class="{ 'link': !isOpen }">
         {{ item.title }}
-        <svg :role="isOpen ? 'button' : undefined" :tabindex="isOpen ? '0' : undefined" :aria-expanded="isOpen ? true : undefined" :aria-controls="isOpen ? 'accordion__item__text--'+itemNumber : undefined" :aria-label="'Chevron icon pointing '+(isOpen ? 'up' : 'down')" class="icon" width="25" height="25" viewBox="112 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M117.404 9L124.372 17L131.404 9H117.404Z" fill="#494E6A"/>
+        <svg :role="isOpen ? 'button' : undefined" :tabindex="isOpen ? '0' : undefined"
+          :aria-expanded="isOpen ? true : undefined"
+          :aria-controls="isOpen ? 'accordion__item__text--' + itemNumber : undefined"
+          :aria-label="'Chevron icon pointing ' + (isOpen ? 'up' : 'down')" class="icon" width="25" height="25"
+          viewBox="112 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M117.404 9L124.372 17L131.404 9H117.404Z" fill="#494E6A" />
         </svg>
       </a>
     </h2>
-    <div :id="'accordion__item__text--'+itemNumber" class="text toggleable" :class="{'show': isOpen}">
+    <div :id="'accordion__item__text--' + itemNumber" class="text toggleable" :class="{ 'show': isOpen }">
       <div>
         <p>{{ item.text }}</p>
         <div class="image-wrapper" v-if="isOpen">
-          <img :src="item.image" :alt="item.title" />
+          <img :src="item.image.replace('-2x', '')" :alt="item.title" width="325" height="285" />
         </div>
       </div>
     </div>
@@ -23,7 +30,7 @@
 export default {
   name: 'AccordionItem',
 
-  data () {
+  data() {
     return {
       isOpen: (this.index === this.openedIndex),
     }
@@ -144,6 +151,7 @@ export default {
       }
     }
   }
+
   .icon {
     cursor: pointer;
     margin-left: auto;
@@ -154,7 +162,8 @@ export default {
       border: none;
     }
 
-    transition: transform 0.3s ease-out, scale 0.3s ease-out;
+    transition: transform 0.3s ease-out,
+    scale 0.3s ease-out;
     transform-origin: center center;
     transform: scale(0.88);
 
@@ -209,7 +218,7 @@ export default {
 
     .icon {
       transform-origin: center center;
-      transform: rotate(180deg)  scale(0.88);
+      transform: rotate(180deg) scale(0.88);
 
       @media (min-width: 1024px) {
         transform: rotate(180deg) scale(1);
@@ -223,7 +232,7 @@ export default {
     opacity: 0;
     transition: grid-template-rows 0.3s ease-out, opacity 0.3s ease-out;
 
-    & > * {
+    &>* {
       overflow: hidden;
     }
 
